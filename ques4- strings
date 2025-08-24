@@ -1,0 +1,98 @@
+ #include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string str1, str2;
+    cout << "Enter first string: ";
+    getline(cin, str1);
+    cout << "Enter second string: ";
+    getline(cin, str2);
+
+    str1 = str1 + str2;
+
+    cout << "Concatenated string: " << str1 << endl;
+    return 0;
+}
+ #include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    string str;
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+    reverse(str.begin(), str.end());
+
+    cout << "Reversed string: " << str << endl;
+    return 0;
+}
+ #include <iostream>
+#include <string>
+using namespace std;
+
+bool isVowel(char c) {
+    c = tolower(c);
+    return (c=='a' || c=='e' || c=='i' || c=='o' || c=='u');
+}
+
+int main() {
+    string str, result="";
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+    for (char c : str) {
+        if (!isVowel(c)) {
+            result += c;
+        }
+    }
+
+    cout << "String without vowels: " << result << endl;
+    return 0;
+}
+ #include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of strings: ";
+    cin >> n;
+    cin.ignore();
+
+    string arr[n];
+    cout << "Enter strings:\n";
+    for (int i = 0; i < n; i++) {
+        getline(cin, arr[i]);
+    }
+
+    sort(arr, arr + n);
+
+    cout << "Strings in alphabetical order:\n";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << endl;
+    }
+
+    return 0;
+}
+ #include <iostream>
+#include <cctype>
+using namespace std;
+
+int main() {
+    char ch;
+    cout << "Enter an uppercase character: ";
+    cin >> ch;
+
+    if (isupper(ch)) {
+        ch = tolower(ch);
+        cout << "Lowercase: " << ch << endl;
+    } else {
+        cout << "Character is not uppercase." << endl;
+    }
+
+    return 0;
+}
